@@ -1,4 +1,4 @@
-package techf.web.controller;
+package techf.web.UI;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import techf.utils.WebUtils;
-import techf.web.formbean.RegisterForm;
-
-public class RegisterServlet extends HttpServlet {
+public class IndexUIServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -26,14 +23,7 @@ public class RegisterServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RegisterForm form=WebUtils.RequestToBean(request, RegisterForm.class);
-		boolean b=form.validate();
-//		if (!b) {
-//			request.setAttribute("form", form);
-//			request.getRequestDispatcher("/servlet/RegisterUIServlet").forward(request, response);
-//			return;
-//		}
-		request.getRequestDispatcher("/servlet/LoginUIServlet").forward(request, response);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	/**

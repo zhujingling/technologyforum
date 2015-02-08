@@ -29,6 +29,20 @@
     <servlet-name>ServiceAgreementServlet</servlet-name>
     <servlet-class>techf.web.UI.ServiceAgreementServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>IndexUIServlet</servlet-name>
+    <servlet-class>techf.web.UI.IndexUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>techf.web.controller.LoginServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -48,6 +62,14 @@
   <servlet-mapping>
     <servlet-name>ServiceAgreementServlet</servlet-name>
     <url-pattern>/servlet/ServiceAgreementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexUIServlet</servlet-name>
+    <url-pattern>/servlet/IndexUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
   </servlet-mapping>
   
 

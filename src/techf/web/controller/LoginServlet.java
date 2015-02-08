@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import techf.utils.WebUtils;
-import techf.web.formbean.RegisterForm;
-
-public class RegisterServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -26,14 +23,7 @@ public class RegisterServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RegisterForm form=WebUtils.RequestToBean(request, RegisterForm.class);
-		boolean b=form.validate();
-//		if (!b) {
-//			request.setAttribute("form", form);
-//			request.getRequestDispatcher("/servlet/RegisterUIServlet").forward(request, response);
-//			return;
-//		}
-		request.getRequestDispatcher("/servlet/LoginUIServlet").forward(request, response);
+		request.getRequestDispatcher("/servlet/IndexUIServlet").forward(request, response);
 	}
 
 	/**
@@ -49,7 +39,19 @@ public class RegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		doGet(request, response);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.print("    This is ");
+		out.print(this.getClass());
+		out.println(", using the POST method");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();
 	}
 
 }

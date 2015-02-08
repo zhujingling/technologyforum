@@ -13,7 +13,7 @@
   
   <body>
     <center>
-        <form class="bs-example bs-example-form" role="form" action="./controller/register.aspx" method="POST" >
+        <form class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath}/servlet/IndexUIServlet" method="POST" >
             <div class="form-group">
                 <h3><strong>用户登录</strong></h3>
             </div>
